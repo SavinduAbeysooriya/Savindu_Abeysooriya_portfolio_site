@@ -1,0 +1,2199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Read and update content attributes accordingly  -->
+
+    <meta
+      name="description"
+      content="Welcome to my portfolio website. I am a front-end web developer and I specialize in creating user-friendly, responsive and accessible websites. Explore my projects, open-source work and contact me for any inquiries or collaborations."
+    />
+
+    <!-- Google / Search Engine Tags -->
+<meta itemprop="name" content="Syed Mohsin's Portfolio">
+<meta itemprop="description" content="Welcome to my portfolio website. I am a front-end web developer and I specialize in creating user-friendly, responsive and accessible websites. Explore my projects, open-source work and contact me for any inquiries or collaborations.">
+
+<!-- Reference screenshot of updated site's header in place of content -->
+<meta itemprop="image" content="assets/images/sharing-card.png">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://ossportfolio.netlify.app">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Syed Mohsin's Portfolio">
+<meta property="og:description" content="Welcome to my portfolio website. I am a front-end web developer and I specialize in creating user-friendly, responsive and accessible websites. Explore my projects, open-source work and contact me for any inquiries or collaborations.">
+
+<!-- Reference screenshot of updated site's header in content -->
+<meta property="og:image" content="assets/images/sharing-card.png">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Syed Mohsin's Portfolio">
+<meta name="twitter:description" content="Welcome to my portfolio website. I am a front-end web developer and I specialize in creating user-friendly, responsive and accessible websites. Explore my projects, open-source work and contact me for any inquiries or collaborations.">
+
+<!-- Reference screenshot of updated site's header in content -->
+<meta name="twitter:image" content="assets/images/sharing-card.png">
+
+
+<!-- Update favicon href attribute with image of yourself -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/profile.jpg"
+      type="image/png"
+    />
+
+    <!-- Preloading fonts for better performance -->
+
+    <link
+      rel="preload"
+      href="assets/fonts/Mona-Sans.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- Your name here -->
+    <title>Savindu Abeysooriya's Portfolio</title>
+
+    <style>
+    
+
+@font-face {
+  font-family: "Mona Sans";
+  src: url("assets/fonts/Mona-Sans.woff2") format("woff2 supports variations"),
+    url("assets/fonts/Mona-Sans.woff2") format("woff2-variations");
+  font-display: swap;
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+
+:root {
+  --h1: 3.5rem;
+  --h2: 3rem;
+  --h3: 2.145rem;
+  --h4: 1.5rem;
+  --text-large: 1.6rem;
+  --text-medium: 1.275rem;
+  --text-small: 1.125rem;
+
+  --gradient-brand: radial-gradient(
+      at 60% 31%,
+      rgb(255, 131, 139) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 48% 98%, rgba(0, 255, 166, 0.707) 0px, transparent 50%),
+    radial-gradient(at 84% 67%, rgb(255, 129, 125) 0px, transparent 50%),
+    radial-gradient(at 16% 47%, rgb(255, 90, 112) 0px, transparent 50%),
+    radial-gradient(at 73% 11%, rgb(115, 255, 225) 0px, transparent 50%),
+    radial-gradient(at 49% 37%, rgba(255, 249, 89, 0.695) 0px, transparent 50%),
+    radial-gradient(at 70% 21%, rgba(58, 255, 186, 0.715) 0px, transparent 50%);
+  --easing: cubic-bezier(0.86, 0, 0.07, 1);
+
+  --site-max-width: 1280px;
+  --gutter-nano: 0.5rem;
+  --gutter-micro: 1rem;
+  --gutter-x-small: 1.5rem;
+  --gutter-small: 2rem;
+  --gutter-medium: 2.5rem;
+  --gutter-large: 3rem;
+  --gutter-x-large: 6rem;
+  --gutter-huge: 12rem;
+
+  --scroll-padding: 4.375rem;
+  --radius: 85px;
+}
+
+body.dark {
+  --bg-color-primary: #0c0a0a;
+  --bg-color-secondary: #161211;
+  --important: #fff;
+  --sub: #c3c3c3;
+  --body: #989898;
+  --border: #c0c0c015;
+  --border-dark: #c0c0c02f;
+  --gradient-border: linear-gradient(to left bottom, #777, #0e0d0d);
+  --shadow: 0 1rem 1rem #00000040;
+}
+
+body.light {
+  --bg-color-primary: #fbfbfb;
+  --bg-color-secondary: #ffffff;
+  --important: #000;
+  --sub: #111;
+  --body: #585b63;
+  --border: #62626234;
+  --border-dark: #5e5e5e1f;
+  --gradient-border: linear-gradient(to left bottom, #000000c6, #0e0d0d00);
+  --shadow: 0 1rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-family: "Mona Sans", sans-serif;
+  box-sizing: border-box;
+  scroll-padding-top: var(--scroll-padding);
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 645px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+body {
+  font-size: var(--text-medium);
+  color: var(--body);
+  background-color: var(--bg-color-primary);
+  line-height: 1.4;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Improve media defaults */
+
+picture,
+svg,
+img {
+  display: block;
+  max-inline-size: 100%;
+  object-fit: contain;
+}
+
+textarea {
+  resize: none;
+}
+
+/* --------------------------------- */
+/* ----- Typography -----*/
+/* --------------------------------- */
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+.h4 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+.h4 {
+  font-stretch: 125%;
+  line-height: 1.2;
+  color: var(--important);
+}
+
+.h1 {
+  font-size: var(--h1);
+}
+
+.h2 {
+  font-size: var(--h2);
+  text-align: center;
+}
+
+.h3 {
+  font-size: var(--h3);
+}
+
+.h4 {
+  font-size: var(--h4);
+}
+
+@media (max-width: 845px) {
+  :root {
+    --h1: 2.845rem;
+    --h2: 2.45rem;
+    --h3: 1.85rem;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --h1: 2.545rem;
+  }
+}
+
+@media (max-width: 545px) {
+  :root {
+    --h1: 2.4rem;
+    --text-large: 1.5rem;
+  }
+}
+
+@media (max-width: 485px) {
+  :root {
+    --h1: 2.145rem;
+    --h2: 1.875rem;
+    --h3: 1.6rem;
+    --text-large: 1.345rem;
+  }
+}
+
+/* --------------------------------- */
+/* ----- Utilities -----*/
+/* --------------------------------- */
+
+/* Center and constrain the width of page sections */
+
+.container {
+  max-inline-size: var(--site-max-width);
+  margin-inline: auto;
+}
+
+@media (max-width: 1375px) {
+  :root {
+    --site-max-width: 1160px;
+  }
+}
+
+@media (max-width: 1275px) {
+  .container {
+    padding-inline: var(--gutter-small);
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding-inline: var(--gutter-medium);
+  }
+}
+
+@media (max-width: 575px) {
+  .container {
+    padding-inline: var(--gutter-small);
+  }
+}
+
+/* disable scroll when menu is opened */
+
+.lock-screen {
+  overflow-y: hidden;
+}
+
+/* hides visually and removes from accessibility tree  */
+
+.hidden {
+  visibility: hidden;
+  transform: translateX(-100%);
+}
+
+.transform {
+  transform: translateY(6rem);
+  opacity: 0;
+}
+
+.shown {
+  transition: 0.1s;
+  color: lightgrey;
+}
+
+/* --------------------------------- */
+/* ----- Components -----*/
+/* --------------------------------- */
+
+.btn {
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  padding: 18px 60px;
+  border-radius: var(--gutter-nano);
+  transition: 0.3s all ease-in-out;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .btn {
+    padding: 16px 48px;
+  }
+}
+
+@media (max-width: 485px) {
+  .btn {
+    font-size: 1.2rem;
+    padding: 14px 38px;
+  }
+}
+
+.btn-cta {
+  color: var(--bg-color-primary);
+  background-color: var(--important);
+}
+
+body.dark .btn-cta:hover,
+body.dark .btn-cta:focus {
+  box-shadow: #ffffff40 0 0 0 var(--gutter-nano);
+}
+
+body.light .btn-cta:hover,
+body.light .btn-cta:focus {
+  box-shadow: #07070733 0 0 0 var(--gutter-nano);
+}
+
+.btn-secondary {
+  border: 1px solid var(--border-dark);
+  color: var(--important);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  border-color: var(--important);
+}
+
+.link {
+  display: inline-block;
+  font-weight: 600;
+  font-size: var(--text-small);
+  padding: var(--gutter-nano) 0;
+  text-decoration: none;
+  color: var(--important);
+  position: relative;
+}
+
+.link::after,
+.link::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  margin-block-start: var(--gutter-nano);
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  transition: 300ms;
+}
+
+body.dark .link::before {
+  background-color: #d3d3d357;
+}
+
+body.dark .link::after {
+  background-color: white;
+}
+
+body.light .link::before {
+  background-color: lightgray;
+}
+
+body.light .link::after {
+  background-color: black;
+}
+
+.link::after {
+  background-color: white;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.link:hover::after,
+.link:focus::after {
+  transform: scaleX(1);
+}
+
+/* --------------------------------- */
+/* ----- Layout -----*/
+/* --------------------------------- */
+
+section:not(:first-child) {
+  padding-block-start: var(--gutter-huge);
+}
+
+section:first-child {
+  padding-block-start: 7rem;
+}
+
+@media (max-width: 885px) {
+  :root {
+    --gutter-huge: 8rem;
+    --gutter-x-large: 4rem;
+  }
+}
+
+main {
+  border-top: 1px solid var(--border);
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  background-color: var(--bg-color-primary);
+  transform: translateY(calc(-1 * var(--radius)));
+}
+
+@media (max-width: 1185px) {
+  :root {
+    --radius: 45px;
+  }
+}
+
+/* --------------------------------- */
+/* ----- Menu Button -----*/
+/* --------------------------------- */
+
+.menu-btn-container {
+  position: fixed;
+  width: 100%;
+  top: var(--gutter-x-small);
+  left: 0;
+  z-index: 4;
+}
+
+.menu-btn {
+  display: block;
+  margin-inline-start: auto;
+  border: 1px solid var(--border-dark);
+  inline-size: 132px;
+  padding-block: var(--gutter-nano);
+  border-radius: var(--gutter-large);
+  text-decoration: none;
+  background-color: var(--bg-color-secondary);
+  color: var(--important);
+  cursor: pointer;
+}
+
+.menu-btn,
+.nav-items a {
+  font-stretch: 125%;
+  font-weight: 900;
+}
+
+/* --------------------------------- */
+/* ----- Navigation -----*/
+/* --------------------------------- */
+
+.nav {
+  min-block-size: 100vh;
+  position: fixed;
+  width: 100%;
+  background-color: #ff5e99;
+  background-image: var(--gradient-brand);
+  transition: 450ms var(--easing);
+  z-index: 3;
+}
+
+.nav-items {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translateY(-50%) translateX(-15%);
+  list-style-type: none;
+}
+
+.nav-item:not(:last-child) {
+  margin-block-end: var(--gutter-x-small);
+}
+
+.nav-item a {
+  display: inline-block;
+  font-size: var(--h2);
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-item a::after {
+  content: "";
+  display: block;
+  block-size: var(--gutter-nano);
+  width: 100%;
+  transform: scale(0);
+  transform-origin: left;
+  background-color: white;
+  transition: transform 250ms var(--easing);
+}
+
+.nav-item a:hover::after,
+.nav-item a:focus::after {
+  transform: scale(1);
+}
+
+/* --------------------------------- */
+/* ----- Header -----*/
+/* --------------------------------- */
+
+.header {
+  min-block-size: calc(100vh + var(--radius));
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+body.dark .header {
+  background-image: linear-gradient(#0000008b, #000000e6),
+    url("assets/images/hero-bg.webp");
+}
+
+body.light .header {
+  background-image: linear-gradient(#ffffffa2, #ffffffe6),
+    url("assets/images/hero-bg-light.webp");
+}
+
+.header-textbox {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.h1 span {
+  display: block;
+}
+
+.header-text {
+  font-size: var(--text-large);
+  font-weight: 400;
+  max-inline-size: 745px;
+  margin-block-start: var(--gutter-micro);
+  margin-block-end: var(--gutter-medium);
+}
+
+/* Box-style photo container */
+.header-photo {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  right: 4rem; /* Adjust horizontal placement */
+  transform: translateY(-50%); /* Aligns vertically */
+  width: 330px; /* Adjust size */
+  height: 330px;
+  border-radius: 10px; /* Slightly rounded corners for a modern look */
+  overflow: hidden;
+  background: linear-gradient(135deg, #04040f, #A8DAB5); /* Gradient border */
+  padding: 5px; /* Creates a border-like gradient effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+  opacity: 0; /* Initially hidden */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth entry animation */
+}
+
+/* Open state for animation */
+.header-photo.open {
+  transform: translateY(-50%) scale(1);
+  opacity: 1; /* Fully visible */
+}
+
+/* Profile image */
+.header-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px; /* Slight rounding for the image */
+  object-fit: cover; /* Ensures the image scales nicely */
+  transition: transform 0.3s ease-in-out; /* Hover animation */
+}
+
+/* Hover effect for the photo */
+.header-photo:hover img {
+  transform: scale(1.05); /* Subtle zoom effect */
+}
+
+
+
+@media (max-width: 1200px) {
+  .header-text {
+    max-inline-size: 685px;
+  }
+}
+
+@media (max-width: 845px) {
+  .header-text {
+    max-inline-size: 585px;
+  }
+}
+
+.header-btns {
+  display: inline-flex;
+  gap: var(--gutter-x-small);
+}
+
+@media (max-width: 400px) {
+  .header-textbox {
+    left: 0;
+    text-align: center;
+    padding-inline: 0.6rem;
+  }
+  .header-btns {
+    flex-direction: column;
+    width: 80%;
+  }
+}
+
+/* --------------------------------- */
+/* ----- Clients -----*/
+/* --------------------------------- */
+
+.logos {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-block-start: var(--gutter-x-large);
+}
+
+@media (max-width: 885px) {
+  .logos {
+    padding-block-start: calc(
+      var(--gutter-x-large) + var(--gutter-x-large) - 2rem
+    );
+  }
+}
+
+.logo-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  max-block-size: 60px;
+  max-inline-size: 150px;
+  transition: all 2.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (max-width: 845px) {
+  .logo {
+    max-inline-size: 100px;
+  }
+
+  .logo-group:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo {
+    max-inline-size: 85px;
+  }
+}
+
+.logo.hide {
+  opacity: 0;
+}
+
+.logo.to-top {
+  transform: scale(0.4) translateY(-150px);
+}
+
+.logo.to-bottom {
+  transform: scale(0.4) translateY(150px);
+}
+
+body.dark .logo {
+  filter: invert(97%) grayscale(100%) opacity(0.6);
+}
+
+body.light .logo {
+  filter: grayscale(100%) opacity(0.6);
+}
+
+/* --------------------------------- */
+/* ----- Work -----*/
+/* --------------------------------- */
+
+.work-boxes {
+  padding-block-start: var(--gutter-x-large);
+}
+
+.work-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 1045px) {
+  .work-boxes {
+    max-inline-size: fit-content;
+    margin-inline: auto;
+  }
+
+  .work-box {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .work-img {
+    margin-block-end: var(--gutter-medium);
+  }
+}
+
+.work-box:not(:last-child) {
+  margin-block-end: var(--gutter-huge);
+}
+
+@media (max-width: 1285px) {
+  .work-box:not(:last-child) {
+    margin-block-end: 8rem;
+  }
+}
+
+.work-img,
+.work-textbox {
+  flex-basis: 49%;
+}
+
+.work-img {
+  max-inline-size: 785px;
+  transition: 0.6s all;
+}
+
+body.light .work-img {
+  box-shadow: var(--shadow);
+}
+
+.work-textbox {
+  max-inline-size: 445px;
+}
+
+@media (max-width: 885px) {
+  .work h2 {
+    margin-block-start: 45px;
+  }
+}
+
+@media (max-width: 485px) {
+  .work h2 {
+    margin-block-start: 0;
+  }
+}
+
+.work-text {
+  margin-block: var(--gutter-micro);
+}
+
+.work-technologies {
+  list-style-position: inside;
+  list-style-type: disc;
+  margin-block-end: var(--gutter-x-small);
+}
+
+.work-links {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gutter-x-small);
+}
+
+.work-links img {
+  block-size: 28px;
+  inline-size: 28px;
+}
+
+body.dark .work-links img {
+  filter: invert(1);
+}
+
+/* Github icon */
+
+.work-links > a:last-child {
+  transition: 0.3s transform ease-in;
+}
+
+.work-links > a:last-child:hover,
+.work-links > a:last-child:focus {
+  transform: scale(1.1);
+}
+
+.work-text,
+.contact-text,
+.work-technologies {
+  font-weight: 300;
+}
+
+.work-textbox h3,
+.work-text,
+.work-technologies,
+.work-links {
+  --delay: 0.2s;
+  animation: slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-play-state: paused;
+}
+
+.work-text {
+  animation-delay: var(--delay);
+}
+
+.work-technologies {
+  animation-delay: calc(var(--delay) * 1.5);
+}
+
+.work-links {
+  animation-delay: calc(var(--delay) * 2);
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(45px);
+    opacity: 0;
+  }
+
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* --------------------------------- */
+/* ----- Articles -----*/
+/* --------------------------------- */
+
+.article-boxes {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 3.5%;
+  margin-block-start: var(--gutter-x-large);
+}
+
+.article-box {
+  flex-basis: 31%;
+  border: 1px solid var(--border);
+  padding: var(--gutter-medium) var(--gutter-small);
+  border-radius: var(--gutter-nano);
+  background-color: var(--bg-color-secondary);
+}
+
+.article-textbox {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-text {
+  font-size: var(--text-small);
+  margin-block: var(--gutter-x-small);
+}
+
+.article-info {
+  display: flex;
+  justify-content: space-between;
+  margin-block-start: auto;
+}
+
+.reaction-count {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gutter-nano);
+  font-size: initial;
+}
+
+@media (max-width: 985px) {
+  .article-boxes {
+    max-inline-size: 685px;
+    margin-inline: auto;
+    justify-content: center;
+    gap: 4%;
+  }
+
+  .article-box:nth-of-type(2),
+  .article-box:nth-of-type(3) {
+    flex-basis: 48%;
+  }
+
+  .article-box:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .article-box:nth-child(2),
+  .article-box:nth-child(3),
+  .article-box:last-child {
+    flex-basis: 100%;
+  }
+
+  .featured-article {
+    margin-block-end: 0;
+  }
+
+  .article-box:not(:last-child) {
+    margin-block-end: var(--gutter-x-small);
+  }
+
+  .article-box:last-child {
+    display: block;
+  }
+}
+
+/* --------------------------------- */
+/* ----- Featured article -----*/
+/* --------------------------------- */
+
+.featured-article {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-end: 44.8px;
+}
+
+@media (max-width: 985px) {
+  .featured-article {
+    margin-block-end: 24.4px;
+    flex-direction: column-reverse;
+  }
+}
+
+.featured-article .article-textbox {
+  flex-basis: 44%;
+}
+
+.featured-article h3 {
+  margin-block-start: var(--gutter-x-small);
+}
+
+.featured-article .article-illustration {
+  flex-basis: 50%;
+}
+
+.article-illustration img {
+  border-radius: var(--gutter-nano);
+}
+
+.featured-article .article-text {
+  font-size: var(--text-medium);
+}
+
+.featured-article .article-info {
+  justify-content: flex-start;
+  gap: var(--gutter-medium);
+}
+
+/* --------------------------------- */
+/* ----- Testimonials -----*/
+/* --------------------------------- */
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-block-start: var(--gutter-x-large);
+  list-style-type: none;
+  background-image: linear-gradient(
+    rgba(88, 88, 88, 0.297),
+    rgba(214, 214, 214, 0.082)
+  );
+}
+
+@media (max-width: 1100px) {
+  .testimonials {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 645px) {
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  padding: var(--gutter-small);
+  background-color: var(--bg-color-primary);
+}
+
+.testimonial-text {
+  font-size: var(--text-small);
+  margin-block-end: var(--gutter-x-small);
+}
+
+.testimonial-author {
+  margin-block-start: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--gutter-micro);
+}
+
+.testimonial-author-name {
+  margin-block-end: 0.3rem;
+}
+
+.testimonial-author-name,
+.testimonial-author-job {
+  font-size: initial;
+}
+
+.testimonial-author > img {
+  block-size: 52px;
+  inline-size: 52px;
+  border-radius: 50%;
+  background-color: var(--bg-color-secondary);
+}
+
+/* --------------------------------- */
+/* ----- Skills -----*/
+/* --------------------------------- */
+
+.skills-imgs {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: var(--gutter-x-large);
+  padding-block-start: var(--gutter-x-large);
+}
+
+.skills-img {
+  block-size: 135px;
+  inline-size: 135px;
+}
+
+@media (max-width: 1100px) {
+  .skills-img {
+    block-size: 100px;
+    inline-size: 100px;
+  }
+}
+
+@media (max-width: 810px) {
+  .skills-img {
+    block-size: 85px;
+    inline-size: 85px;
+  }
+}
+
+@media (max-width: 675px) {
+  .skills-imgs {
+    gap: var(--gutter-large);
+  }
+  .skills-img {
+    block-size: 70px;
+    inline-size: 70px;
+  }
+}
+
+@media (max-width: 340px) {
+  .skills-img {
+    block-size: 55px;
+    inline-size: 55px;
+  }
+}
+
+/* --------------------------------- */
+/* ----- Contact -----*/
+/* --------------------------------- */
+
+.contact-content {
+  display: grid;
+  grid-template-columns: minmax(245px, 35%) 1fr;
+  margin-block: var(--gutter-x-large);
+  border: 1px solid var(--border);
+  border-radius: var(--gutter-nano);
+}
+
+@media (max-width: 1032px) {
+  .contact-content {
+    display: flex;
+    flex-direction: column-reverse;
+    max-inline-size: 845px;
+    margin-inline: auto;
+  }
+}
+
+.contact-textbox,
+.contact-form {
+  padding: var(--gutter-large) var(--gutter-small);
+}
+
+.hire-alert {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gutter-nano);
+  font-size: initial;
+  padding: var(--gutter-nano) var(--gutter-micro);
+  border-radius: var(--gutter-small);
+  position: relative;
+  z-index: 1;
+  margin-block-end: var(--gutter-small);
+  color: var(--important);
+}
+
+.hire-alert::before,
+.hire-alert::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.hire-alert::after {
+  background-image: var(--gradient-border);
+  z-index: -2;
+}
+
+.hire-alert::before {
+  background-color: var(--bg-color-primary);
+  inset: 1px;
+  z-index: -1;
+}
+
+.indicator {
+  display: inline-block;
+  block-size: var(--gutter-nano);
+  inline-size: var(--gutter-nano);
+  border-radius: 50%;
+  background-color: red;
+  animation: blink 550ms alternate infinite var(--easing);
+}
+
+@keyframes blink {
+  100% {
+    opacity: 0;
+  }
+}
+
+.contact-text {
+  margin-block-end: var(--gutter-small);
+}
+
+.signatures {
+  inline-size: 150px;
+}
+
+body.light .signatures {
+  filter: invert(1);
+}
+
+.contact-form {
+  background-color: var(--bg-color-secondary);
+  border-top-right-radius: var(--gutter-nano);
+  border-bottom-right-radius: var(--gutter-nano);
+}
+
+.form-field label,
+.form-field input,
+.form-field textarea {
+  display: block;
+  width: 100%;
+}
+
+.form-field label {
+  color: var(--important);
+}
+
+.form-field input,
+.form-field textarea {
+  font-size: var(--text-small);
+  color: var(--sub);
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--border);
+  background-color: transparent;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: #888;
+}
+
+.form-field input,
+.form-field textarea {
+  margin-block-end: var(--gutter-small);
+  padding: var(--gutter-nano);
+  margin-inline: var(--gutter-nano);
+}
+
+.form-field label {
+  font-size: var(--text-small);
+  margin-block-end: var(--gutter-nano);
+  margin-inline-start: var(--gutter-nano);
+}
+
+.contact-form button[type="submit"] {
+  border: none;
+}
+
+/* --------------------------------- */
+/* ----- Footer -----*/
+/* --------------------------------- */
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding-block: var(--gutter-x-large);
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 875px) {
+  .footer-content {
+    flex-direction: column-reverse;
+    gap: var(--gutter-small);
+  }
+  .footer-text {
+    text-align: center;
+  }
+}
+
+.footer-text {
+  font-size: var(--text-small);
+}
+
+.footer-text a {
+  color: var(--sub);
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--gutter-small);
+  list-style-type: none;
+}
+
+@media (max-width: 1040px) {
+  .footer-links {
+    gap: var(--gutter-micro);
+  }
+}
+
+.footer-link img {
+  block-size: 32px;
+  inline-size: 32px;
+}
+
+.footer-link a {
+  opacity: 0.875;
+  transition: 225ms ease-in opacity;
+}
+
+.footer-link a:hover {
+  opacity: 1;
+}
+
+body.dark .footer-link img {
+  filter: invert(1);
+}
+
+.theme-switch {
+  /* Track */
+
+  --track-size: calc(var(--thumb-size) * 2);
+  --track-padding: 0.225rem;
+  --track-inactive: hsl(80 0% 80%);
+  --track-active: #d7aefb;
+
+  --track-color-inactive: var(--track-inactive);
+  --track-color-active: var(--track-active);
+
+  /* Thumb */
+
+  --thumb-position: 0%;
+  --thumb-size: 1.2rem;
+  --thumb: hsl(0 0% 100%);
+  --thumb-highlight: hsla(0, 0%, 0%, 0.056);
+
+  --thumb-color: var(--thumb);
+  --thumb-color-highlight: var(--thumb-highlight);
+}
+
+.theme-switch {
+  display: flex;
+  align-items: center;
+  gap: 2ch;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.theme-switch > span,
+.theme-switch > input {
+  cursor: pointer;
+}
+
+.theme-switch span {
+  font-size: 1rem;
+  color: var(--sub);
+}
+
+.theme-switch > input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: content-box;
+  inline-size: var(--track-size);
+  block-size: var(--thumb-size);
+  padding: var(--track-padding);
+  background-color: var(--track-color-inactive);
+  border-radius: var(--track-size);
+}
+
+.theme-switch > input::after {
+  display: block;
+  content: "";
+  inline-size: var(--thumb-size);
+  block-size: var(--thumb-size);
+  background-color: var(--thumb-color);
+  border-radius: 50%;
+  transform: translateX(var(--thumb-position));
+  transition: 500ms all cubic-bezier(0.45, 0.05, 0.22, 1.3);
+}
+
+input:checked {
+  --thumb-position: 100%;
+  background-color: var(--track-active);
+}
+
+
+
+    </style>
+  </head>
+
+  <body>
+
+    <script>
+      const theme = localStorage.getItem("theme") || "dark";
+      document.body.classList.add(theme);
+    </script>
+
+    <header class="header">
+   
+
+      <div class="menu-btn-container">
+        <div class="container">
+          <button type="button"  class="menu-btn">Menu</button>
+        </div>
+      </div>
+
+      <nav class="nav hidden">
+        <ol class="nav-items">
+          <li class="nav-item"><a href="#">Home</a></li>
+          <li class="nav-item"><a href="#work">My Projects</a></li>
+          <li class="nav-item"><a href="#about">About Me</a></li>
+          <li class="nav-item"><a href="#skills">My Skills</a></li>
+          <li class="nav-item">
+            <a href="#contact" data-focused="last-focused">Contact</a>
+          </li>
+        </ol>
+      </nav>
+
+      <div class="container">
+        <div class="header-photo" id="headerPhoto">
+          <img src="assets/images/profile.jpg" alt="Your Profile Photo">
+        </div>
+        
+        <script>
+          const headerPhoto = document.getElementById('headerPhoto');
+        
+          // Add fade-in animation when the page loads
+          window.addEventListener('load', () => {
+            setTimeout(() => {
+              headerPhoto.classList.add('open');
+            }, 500);
+          });
+        
+          // Optional reanimation on click
+          headerPhoto.addEventListener('click', () => {
+            headerPhoto.classList.remove('open');
+            setTimeout(() => {
+              headerPhoto.classList.add('open');
+            }, 100);
+          });
+        </script>
+        
+        
+        <div class="header-textbox">
+          
+          <!-- Replace with your name and job title -->
+          <h1 class="h1">
+            <span>Hi, I'm Savindu Abeysooriya</span>
+            <span>Full-Stack Web Developer</span>
+          </h1>
+
+          <!-- Add a small introductory paragraph about yourself -->
+          <p class="header-text">
+            Full-Stack Web Developer and UI/UX Designer creating responsive websites and intuitive user interfaces. 
+            Skilled in modern technologies, delivering seamless digital experiences with a creative touch.
+          </p>
+
+          <div class="header-btns">
+            <a href="#contact" class="btn btn-cta">Hire me</a>
+            <a href="#work" class="btn btn-secondary">See my work</a>
+            <a href="assets/images/Savindu.docx" class="btn btn-secondary">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="client">
+        <div class="container">
+          <h2 class="h2" id="about">About Me</h2>
+          <p>
+            <br>As a software engineer, I specialize in crafting dynamic web interfaces and designing systems with a keen focus on accessibility and performance. I thrive in coding from scratch, bringing ideas to life through clean, efficient code. My expertise spans web development with HTML, CSS, JavaScript, and PHP, along with mobile app development using Java and SQLite in Android Studio.
+          </p>
+          <br>
+          <p>
+            In addition to my technical skills, I am passionate about contributing to open-source projects and continuously learning through real-world applications. In my spare time, I use my Lenovo IdeaPad Gaming 3 to work on personal projects, further enhancing my problem-solving abilities and expanding my knowledge in technology. I am committed to creating seamless, user-centric experiences through every line of code I write.
+          </p>
+          <br>
+          <p>
+            If you’re looking for a versatile, driven developer with a passion for innovation and clean design, I’m the one to bring your ideas to life.
+          </p>
+        </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="work">
+        <div class="container">
+          <h2 class="h2" id="work">My Projects</h2>
+          <div class="work-boxes">
+            <div class="work-box">
+              <div class="work-textbox">
+                <!-- Add your project title here -->
+                <h3 class="h3">Gallery Cafe</h3>
+                <!-- Add small description of your project  -->
+               
+                <p class="work-text">
+                  Gallery Café's website offers meals, reservations, pre-orders, user accounts, and a seamless dining experience.
+                </p>
+                <!-- Add technologies you used to build the project -->
+                <ol class="work-technologies">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                  <li>MYSQL</li>
+                  <li>PHP</li>
+                </ol>
+
+                <div class="work-links">
+                  <!-- Add url of project in href attribute -->
+                  <a href="#" target="_blank" rel="noopener" class="link"
+                    >Explore this project</a
+                  >
+
+                  <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
+                  <a
+                    href="https://github.com/devsyedmohsin"
+                    target="_blank"
+                    rel="noopener"
+                    title="Source code"
+                  >
+                    <img
+                      src="assets/images/social-links/github.svg"
+                      alt="GitHub"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+              </div>
+
+         <!-- Update img src and alt attribute  -->
+
+              <picture class="work-img">
+                <img
+                  loading="lazy"
+                  src="assets/images/work/resto.png"
+                  alt="agency elevation"
+                />
+              </picture>
+            </div>
+
+            <div class="work-boxes">
+              <div class="work-box">
+                <div class="work-textbox">
+                  <!-- Add your project title here -->
+                  <h3 class="h3">Image to Text Converter</h3>
+                  <!-- Add small description of your project  -->
+                 
+                  <p class="work-text">
+                    A tool for filtering text from images.
+                  </p>
+                  <!-- Add technologies you used to build the project -->
+                  <ol class="work-technologies">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Tesseract</li>
+                  </ol>
+  
+                  <div class="work-links">
+                    <!-- Add url of project in href attribute -->
+                    <a href="#" target="_blank" rel="noopener" class="link"
+                      >Explore this project</a
+                    >
+  
+                    <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
+                    <a
+                      href="https://github.com/devsyedmohsin"
+                      target="_blank"
+                      rel="noopener"
+                      title="Source code"
+                    >
+                      <img
+                        src="assets/images/social-links/github.svg"
+                        alt="GitHub"
+                        loading="lazy"
+                      />
+                    </a>
+                  </div>
+                </div>
+  
+           <!-- Update img src and alt attribute  -->
+  
+                <picture class="work-img">
+                  <img
+                    loading="lazy"
+                    src="assets/images/work/converter.png"
+                    alt="agency elevation"
+                  />
+                </picture>
+              </div>
+
+
+              <div class="work-boxes">
+                <div class="work-box">
+                  <div class="work-textbox">
+                    <!-- Add your project title here -->
+                    <h3 class="h3">Luxe Vista Resort's Android Application</h3>
+                    <!-- Add small description of your project  -->
+                   
+                    <p class="work-text">
+                      LuxeVista is a mobile app that enhances resort experiences with booking, services, and guest features.
+                    </p>
+                    <!-- Add technologies you used to build the project -->
+                    <ol class="work-technologies">
+                      <li>Java</li>
+                      <li>SQLite</li>
+                      <li>Figma</li>
+                    </ol>
+    
+                    <div class="work-links">
+                      <!-- Add url of project in href attribute -->
+                      <a href="#" target="_blank" rel="noopener" class="link"
+                        >Explore this project</a
+                      >
+    
+                      <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
+                      <a
+                        href="#"
+                        target="_blank"
+                        rel="noopener"
+                        title="Source code"
+                      >
+                        <img
+                          src="assets/images/social-links/github.svg"
+                          alt="GitHub"
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </div>
+    
+             <!-- Update img src and alt attribute  -->
+    
+                  <picture class="work-img">
+                    <img
+                      loading="lazy"
+                      src="assets/images/work/luxe.jpg"
+                      alt="agency elevation"
+                    />
+                  </picture>
+                </div>
+
+
+            <div class="work-box">
+              <div class="work-textbox">
+                <!-- Add your project title here -->
+                <h3 class="h3">Fitzone Fitness Center</h3>
+                <!-- Add small description of your project  -->
+
+                <p class="work-text">Fitzone Fitnezz Center project streamlines gym management with features for registration, scheduling,
+                   fitness tracking, and search.</p>
+                <ol class="work-technologies">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Javascript</li>
+                  <li>MYSQL</li>
+                  <li>PHP</li>
+                </ol>
+                <div class="work-links">
+                  <!-- Add url of project in href attribute -->
+                  <a href="#" target="_blank" rel="noopener" class="link"
+                    >Explore this project</a
+                  >
+
+                     <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    title="Source code"
+                  >
+                    <img
+                      src="assets/images/social-links/github.svg"
+                      alt="GitHub"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+              </div>
+         <!-- Update img src and alt attribute  -->
+              <picture class="work-img">
+                <img
+                  loading="lazy"
+                  src="assets/images/work/gym.png"
+                  alt="portfolio template"
+                />
+              </picture>
+            </div>
+            <div class="work-box">
+              <div class="work-textbox">
+                <!-- Add your project title here -->
+                <h3 class="h3">The Cosmetic Store Management System</h3>
+                <!-- Add small description of your project  -->
+                <p class="work-text">
+                  Software for managing a cosmetic store.
+                </p>
+                <ol class="work-technologies">
+                  <li>Java</li>
+                  <li>MYSQL</li>
+                </ol>
+                <div class="work-links">
+                  <!-- Add url of project in href attribute -->
+                  <a href="#" target="_blank" rel="noopener" class="link"
+                    >Explore this project</a
+                  >
+
+                   <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    title="Source code"
+                  >
+                    <img
+                      src="assets/images/social-links/github.svg"
+                      alt="GitHub"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+              </div>
+         <!-- Update img src and alt attribute  -->
+              <picture class="work-img">
+                <img
+                  loading="lazy"
+                  src="assets/images/work/pos.png"
+                  alt="contribute dev"
+                />
+              </picture>
+            </div>
+          </div>
+        </div>
+
+
+        
+      </section>
+
+      <!-- I write blog posts on dev.to at https://dev.to/devsyedmohsin. I have linked my articles accordingly, so please update the article title, description, and link accordingly. For example, if you write an article on Medium, link your article to Medium. Also, don't forget to update the reaction count. -->
+
+      <!--<section class="article">
+        <div class="container">
+          <h2 class="h2" id="blog">My Articles</h2>
+          <div class="article-boxes">
+            <article class="article-box featured-article">
+              <div class="article-textbox">
+                <div>
+                  <h3 class="h3">
+                    22 Useful CSS Tips and Tricks Every Developer Should Know
+                  </h3>
+                  <p class="article-text">
+                    Note: All the tips, tricks shared in this article are part
+                    of my GitHub repository css tips tricks A handmade
+                    collection of pro css tips tricks for developers.
+                  </p>
+                </div>
+                <div class="article-info">
+                  <a href="https://dev.to/devsyedmohsin" class="link" target="_blank" rel="noopener"
+                    >Continue reading</a
+                  >
+                  <span class="reaction-count">
+                    <img src="./assets/images/heart-outline.svg" alt="heart" />
+                    416
+                  </span>
+                </div>
+              </div>
+              <picture class="article-illustration">
+                <img
+                  src="assets/images/featured-blog.webp"
+                  alt="MacBook Pro"
+                  loading="lazy"
+                />
+              </picture>
+            </article>
+            <article class="article-box">
+              <div class="article-textbox">
+                <div>
+                  <h3 class="h4">JavaScript Default Function Parameters.</h3>
+                  <p class="article-text">
+                    In JavaScript when we call a function which expects some
+                    data to be passed in if you call that without passing
+                  </p>
+                </div>
+                <div class="article-info">
+                  <a href="https://dev.to/devsyedmohsin" class="link" target="_blank" rel="noopener"
+                    >Continue reading</a
+                  >
+                  <span class="reaction-count">
+                    <img
+                      src="./assets/images/heart-outline.svg"
+                      alt="heart"
+                      loading="lazy"
+                    />
+                    47
+                  </span>
+                </div>
+              </div>
+            </article>
+            <article class="article-box">
+              <div class="article-textbox">
+                <div>
+                  <h3 class="h4">
+                    Free Open-source portfolio template for developers ✨
+                  </h3>
+                  <p class="article-text">
+                    A beautiful, minimal and accessible portfolio template for
+                    Developers which is completely free and Open Source.
+                  </p>
+                </div>
+                <div class="article-info">
+                  <a href="https://dev.to/devsyedmohsin/free-open-source-portfolio-template-for-developers-4g1d" class="link" target="_blank" rel="noopener"
+                    >Continue reading</a
+                  >
+                  <span class="reaction-count">
+                    <img
+                      src="./assets/images/heart-outline.svg"
+                      alt="heart"
+                      loading="lazy"
+                    />
+                    177
+                  </span>
+                </div>
+              </div>
+            </article>
+            <article class="article-box">
+              <div class="article-textbox">
+                <div>
+                  <h3 class="h4">HTML tips and tricks.</h3>
+                  <div class="article-text">
+                    In my very last article I shared some JavaScript tips and
+                    tricks In this article I will be covering HTML tips and
+                    tricks.
+                  </div>
+                </div>
+                <div class="article-info">
+                  <a href="https://dev.to/devsyedmohsin" class="link" target="_blank" rel="noopener"
+                    >Continue reading</a
+                  >
+                  <span class="reaction-count">
+                    <img
+                      loading="lazy"
+                      src="./assets/images/heart-outline.svg"
+                      alt="heart"
+                    />
+                    350
+                  </span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>-->
+
+      <!-- Skills  -->
+
+      <section class="skills">
+        <div class="container">
+          <h2 class="h2" id="skills">My Skills</h2>
+          <div class="skills-imgs">
+                <img src="assets/images/skills/html.png" alt="HTML" class="skills-img" loading="lazy" title="HTML">
+                <img src="assets/images/skills/php.png" alt="PHP" class="skills-img" loading="lazy" title="PHP">
+                <img src="assets/images/skills/css.webp" alt="CSS" class="skills-img" loading="lazy" title="CSS">
+                <img src="assets/images/skills/js.webp" alt="JavaScript" class="skills-img" loading="lazy" title="JavaScript">
+                 <img src="assets/images/skills/java.png" alt="Java" class="skills-img" loading="lazy" title="Java">
+                 <img src="assets/images/skills/xml.png" alt="xml" class="skills-img" loading="lazy" title="XML ui design">
+                 <img src="assets/images/skills/mysql.png" alt="MYSQL" class="skills-img" loading="lazy" title="MYSQL">
+                 <img src="assets/images/skills/sqlite.png" alt="SQLite" class="skills-img" loading="lazy" title="SQLite">
+                 <img src="assets/images/skills/figma.png" alt="Figma" class="skills-img" loading="lazy" title="Figma">   
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Replace testimonials, author name, author job, img src and, alt attributes -->
+
+      <!--<section>
+        <h2 class="h2">Testimonials</h2>
+        <div class="container">
+          <ol class="testimonials">
+            <li class="testimonial">
+              <blockquote class="testimonial-text">
+                Working with Syed was a great experience. His drive for clean aesthetics and his open communication style helped us collaborate closely on the solution.
+              </blockquote>
+              <figure class="testimonial-author">
+                <img
+                  src="assets/images/testimonials/rich-harris.png"
+                  alt="Rich Harris"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <h3 class="testimonial-author-name">Harris Kareem</h3>
+                  <p class="testimonial-author-job">Developer @Outlets</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="testimonial">
+              <blockquote class="testimonial-text">
+                Syed is a fantastic UI/UX designer and developer with a keen sense for marketing, and lead generation. He's the only designer I know who also has a deep understanding for code and front-end development.
+              </blockquote>
+              <figure class="testimonial-author">
+                <img
+                  src="assets/images/testimonials/frank-mcsherry.webp"
+                  alt="Andrew Mead"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <h3 class="testimonial-author-name">
+                   Andrew Mead
+                  </h3>
+                  <p class="testimonial-author-job">Chief Scientist @Logos
+                  </p>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="testimonial">
+              <blockquote class="testimonial-text">
+             
+                Talented artist, experienced with various
+                media and can make any project you are working on look good. He is
+                easy to work with and is a self starter. I would work with Syed
+                again.
+              </blockquote>
+              <figure class="testimonial-author">
+                <img
+                  src="assets/images/testimonials/brian-hirsh.png"
+                  alt="Brian Hirsh"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <h3 class="testimonial-author-name">Brian Hirsh</h3>
+                  <p class="testimonial-author-job">Head @Zero-in</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="testimonial">
+              <blockquote class="testimonial-text">
+                Syed is a true professional with amazing talent. He is a creative
+                thinker, has his finger on the pulse of whats to come, and
+                absolutely one of the quickest and best problem solvers I have
+                ever met.
+              </blockquote>
+              <figure class="testimonial-author">
+                <img
+                  src="assets/images/testimonials/adam.png"
+                  alt="Adam Argalye"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <h3 class="testimonial-author-name">Adam Argalye</h3>
+                  <p class="testimonial-author-job">SWE @Google</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="testimonial">
+              <blockquote class="testimonial-text">
+               Syed is one of my favourite people to work with. He's my go-to colleague when trouble shooting any new technique or technology because she understands how to tackle unknown problems with gumption. 
+              </blockquote>
+              <figure class="testimonial-author">
+                <img
+                  src="assets/images/testimonials/val-head.png"
+                  alt="Val Head"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <h3 class="testimonial-author-name">Val Head</h3>
+                  <p class="testimonial-author-job">CEO @Engines</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="testimonial">
+              <blockquote class="testimonial-text">
+                Syed is a talented artist. He is very experienced with various
+                media and can make any project you are working on look good. He is
+                easy to work with and is a self starter. I would work with Syed
+                again.
+              </blockquote>
+              <figure class="testimonial-author">
+                <img
+                  src="assets/images/testimonials/tim-satterwhite.webp"
+                  alt="Gary Simon"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <h3 class="testimonial-author-name">Gary Simon</h3>
+                  <p class="testimonial-author-job">A11y Advocate @W3C</p>
+                </figcaption>
+              </figure>
+            </li>
+          </ol>
+        </div>
+      </section>  -->
+
+    <!--contact form-->
+      <section class="contact">
+        <div class="container">
+          <h2 class="h2" id="contact">Send Message</h2>
+          <div class="contact-content">
+            <div class="contact-textbox">
+              <!-- Please comment this component if you're not available for hire -->
+              <strong href="#" class="hire-alert">
+                <span class="indicator"></span>
+                Available for hire
+              </strong>
+              <p class="contact-text">
+                As a software engineer, I build web interfaces and design systems,
+                 with a strong focus on accessibility and performance.
+                  I enjoy coding from scratch and transforming ideas into functional, dynamic solutions.
+              </p>
+              <p class="contact-text">
+                I'm also an open-source developer, and in my spare time, I work on projects using my Lenovo IdeaPad Gaming 3.
+              </p>
+              <!-- Replace src with your signatures and name -->
+              <img
+                src="assets/images/signatures.png"
+                alt="Savindu Abeysooriya"
+                class="signatures"
+                loading="lazy"
+              />
+            </div>
+         <!-- Contact Form -->
+      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="https://api.web3forms.com/submit" class="contact-form">
+        <!-- Hidden field for honeypot to prevent spam -->
+        <div style="display: none;">
+          <input type="text" name="bot-field" />
+        </div>
+        <input type="hidden" name="access_key" value="f74d7fdd-302e-4083-a304-41a41ebe42c2">
+
+        <!-- Name field -->
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" required />
+        </div>
+
+        <!-- Email field -->
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required inputmode="email" />
+        </div>
+
+        <!-- Message field -->
+        <div class="form-field">
+          <label for="message">How can I help you?</label>
+          <textarea name="message" id="message" required></textarea>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-cta">Send</button>
+      </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Update href and src attributes -->
+          
+          <nav>
+            <ol class="footer-links">
+              <li class="footer-link">
+                <a title="GitHub" href="https://github.com/SavinduAbeysooriya" target="_blank" rel="noopener"
+                  ><img
+                    loading="lazy"
+                    src="assets/images/social-links/github.svg"
+                    alt="GitHub"
+                /></a>
+              </li>
+              <li class="footer-link">
+                <a title="Instagram" href="https://www.instagram.com/savii._/profilecard/?igsh=MXRheHp2M3Ztcm4weQ==" target="_blank" rel="noopener"
+                  ><img
+                    loading="lazy"
+                    src="assets/images/social-links/instagram.svg"
+                    alt="Instagram"
+                /></a>
+              </li>
+              <li class="footer-link">
+                <a title="Linkedin" href="https://www.linkedin.com/in/savindu-abeysooriya-13082129a/" target="_blank" rel="noopener"
+                  ><img
+                    loading="lazy"
+                    src="assets/images/social-links/linkedin.svg"
+                    alt="Linkedin"
+                /></a>
+              </li>
+              <li class="footer-link">
+                <a title="Facebook" href="https://www.facebook.com/vi.savi.714?mibextid=LQQJ4d" target="_blank" rel="noopener"
+                  ><img
+                    loading="lazy"
+                    src="assets/images/social-links/facebook.svg"
+                    alt="Facebook"
+                /></a>
+              </li>
+              <li class="footer-link">
+                <a title="TikTok" href="https://www.tiktok.com/@savii_?_t=8rTGCJ3aeqV&_r=1" target="_blank" rel="noopener"
+                  ><img
+                    loading="lazy"
+                    src="assets/images/social-links/tiktok.svg"
+                    alt="TikTok"
+                /></a>
+              </li>
+            </ol>
+          </nav>
+          
+          <label class="theme-switch" for="theme-switch">
+            <span>Dark Theme</span>
+            <input type="checkbox" id="theme-switch" role="switch"/>
+          </label>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const nav = document.querySelector(".nav");
+const navMenu = document.querySelector(".nav-items");
+const btnToggleNav = document.querySelector(".menu-btn");
+const workEls = document.querySelectorAll(".work-box");
+const workImgs = document.querySelectorAll(".work-img");
+const mainEl = document.querySelector("main");
+const yearEl = document.querySelector(".footer-text span");
+
+const toggleNav = () => {
+  nav.classList.toggle("hidden");
+
+  // Prevent screen from scrolling when menu is opened
+  document.body.classList.toggle("lock-screen");
+
+  if (nav.classList.contains("hidden")) {
+    btnToggleNav.textContent = "menu";
+  } else {
+    // When menu is opened after transition change text respectively
+    setTimeout(() => {
+      btnToggleNav.textContent = "close";
+    }, 475);
+  }
+};
+
+btnToggleNav.addEventListener("click", toggleNav);
+
+navMenu.addEventListener("click", (e) => {
+  if (e.target.localName === "a") {
+    toggleNav();
+  }
+});
+
+document.body.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !nav.classList.contains("hidden")) {
+    toggleNav();
+  }
+});
+
+// Animating work instances on scroll
+
+workImgs.forEach((workImg) => workImg.classList.add("transform"));
+
+let observer = new IntersectionObserver(
+  (entries) => {
+    const [entry] = entries;
+    const [textbox, picture] = Array.from(entry.target.children);
+    if (entry.isIntersecting) {
+      picture.classList.remove("transform");
+      Array.from(textbox.children).forEach(
+        (el) => (el.style.animationPlayState = "running")
+      );
+    }
+  },
+  { threshold: 0.3 }
+);
+
+workEls.forEach((workEl) => {
+  observer.observe(workEl);
+});
+
+// Toggle theme and store user preferred theme for future
+
+const switchThemeEl = document.querySelector('input[type="checkbox"]');
+const storedTheme = localStorage.getItem("theme");
+
+switchThemeEl.checked = storedTheme === "dark" || storedTheme === null;
+
+switchThemeEl.addEventListener("click", () => {
+  const isChecked = switchThemeEl.checked;
+
+  if (!isChecked) {
+    document.body.classList.remove("dark");
+    document.body.classList.add("light");
+    localStorage.setItem("theme", "light");
+    switchThemeEl.checked = false;
+  } else {
+    document.body.classList.add("dark");
+    document.body.classList.remove("light");
+    localStorage.setItem("theme", "dark");
+  }
+});
+
+// Trap the tab when menu is opened
+
+const lastFocusedEl = document.querySelector('a[data-focused="last-focused"]');
+
+document.body.addEventListener("keydown", (e) => {
+  if (e.key === "Tab" && document.activeElement === lastFocusedEl) {
+    e.preventDefault();
+    btnToggleNav.focus();
+  }
+});
+
+// Rotating logos animation
+
+const logosWrappers = document.querySelectorAll(".logo-group");
+
+const sleep = (number) => new Promise((res) => setTimeout(res, number));
+
+logosWrappers.forEach(async (logoWrapper, i) => {
+  const logos = Array.from(logoWrapper.children);
+  await sleep(1400 * i);
+  setInterval(() => {
+    let temp = logos[0];
+    logos[0] = logos[1];
+    logos[1] = logos[2];
+    logos[2] = temp;
+    logos[0].classList.add("hide", "to-top");
+    logos[1].classList.remove("hide", "to-top", "to-bottom");
+    logos[2].classList.add("hide", "to-bottom");
+  }, 5600);
+});
+
+yearEl.textContent = new Date().getFullYear();
+
+    </script>
+  </body>
+</html>
